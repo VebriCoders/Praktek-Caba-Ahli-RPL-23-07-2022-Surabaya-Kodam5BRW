@@ -2,11 +2,29 @@
  <script src="<?php echo base_url('assets/js/') ?>jquery-3.6.0.min.js"></script>
  <script src="<?php echo base_url('assets/js/') ?>bootstrap.bundle.min.js"></script>
  <script src="<?php echo base_url('assets/plugin/datatables/') ?>jquery.dataTables.min.js"></script>
+ <script src="<?php echo base_url('assets/plugin/datatables/') ?>dataTables.fixedHeader.min.js"></script>
+ <script src="<?php echo base_url('assets/plugin/datatables/') ?>dataTables.responsive.min.js"></script>
  <script src="<?php echo base_url('assets/plugin/fontawesome/') ?>all.js"></script>
 
  <script>
+     $('#table_id').DataTable({
+         responsive: true
+     });
+     //  $(document).ready(function() {
+     //      var table = $('#table_id').DataTable({
+     //          responsive: true
+     //      });
+
+     //      new $.fn.dataTable.FixedHeader(table);
+     //  });
+ </script>
+ <script>
      $(document).ready(function() {
-         $('#table_id').DataTable();
+         var table = $('#tablea_id').DataTable({
+             responsive: true
+         });
+
+         new $.fn.dataTable.FixedHeader(table);
      });
  </script>
 
@@ -47,7 +65,7 @@
              </div>
              <div class="modal-footer">
                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i> Batal</button>
-                 <button id="submit" type="submit" class="btn btn-success"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+                 <button id="login" type="submit" class="btn btn-success"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
              </div>
          </div>
      </div>
@@ -69,7 +87,7 @@
              </div>
              <div class="modal-footer">
                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i> Batal</button>
-                 <button id="submit" type="submit" class="btn btn-danger"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+                 <button id="logout" type="submit" class="btn btn-danger"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
              </div>
          </div>
      </div>

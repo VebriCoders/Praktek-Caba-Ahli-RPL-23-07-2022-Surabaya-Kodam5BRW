@@ -8,6 +8,7 @@
 
     <link href="<?php echo base_url('assets/css/') ?>bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url('assets/plugin/datatables/') ?>jquery.dataTables.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets/plugin/datatables/') ?>responsive.bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url('assets/plugin/fontawesome/') ?>all.css" rel="stylesheet">
     <link rel="icon" href="<?php echo base_url('assets/img/') ?>logo-tni-ad.png">
     <meta name="theme-color" content="#712cf9">
@@ -107,14 +108,16 @@
                         </li>
                     <?php } ?>
 
-                    <?php if ($this->uri->segment(1) == 'data_peserta') { ?>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="<?php echo base_url('data_peserta') ?>">Data Perserta</a>
-                        </li>
-                    <?php } else { ?>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="<?php echo base_url('data_peserta') ?>">Data Perserta</a>
-                        </li>
+                    <?php if ($this->session->userdata('is_login') == 1) { ?>
+                        <?php if ($this->uri->segment(1) == 'data_peserta') { ?>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="<?php echo base_url('data_peserta') ?>">Data Perserta</a>
+                            </li>
+                        <?php } else { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="<?php echo base_url('data_peserta') ?>">Data Perserta</a>
+                            </li>
+                        <?php } ?>
                     <?php } ?>
 
                 </ul>

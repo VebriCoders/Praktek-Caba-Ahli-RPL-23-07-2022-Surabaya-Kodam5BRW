@@ -13,61 +13,66 @@
             <div class="container-fluid py-5" style="margin-bottom: 80px">
                 <h1 class="display-8 fw-bold text-center" style="margin-bottom: 30px">Data Peserta Calon Prajurit TNI-AD</h1>
 
-                <table id="table_id" class="display">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nomor Handphone</th>
-                            <th>Nama</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Alamat</th>
-                            <th>Agama</th>
-                            <th>Di Daftarkan</th>
+                <div class="row">
+                    <div class="col-12">
+                        <table id="table_id" class="table table-striped" style="width:100%">
 
-                            <?php if ($this->session->userdata('is_login') == 1) { ?>
-                                <th>Action</th>
-                            <?php } ?>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $i = 1;
-                        foreach ($tampilData->result() as $data) { ?>
-                            <tr>
-                                <td><?php echo $i; ?></td>
-                                <td><?php echo $data->no_hp ?></td>
-                                <td><?php echo $data->nama ?></td>
-                                <td>
-                                    <?php if ($data->jenis_kelamin == 1) {
-                                        echo "Pria";
-                                    } else {
-                                        echo "Wanita";
-                                    }  ?>
-                                </td>
-                                <td><?php echo $data->alamat ?></td>
-                                <td><?php echo $data->agama ?></td>
-                                <td><?php echo $data->created_on ?></td>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Nomor Handphone</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Alamat</th>
+                                    <th>Agama</th>
+                                    <th>Di Daftarkan</th>
 
-                                <?php if ($this->session->userdata('is_login') == 1) { ?>
-                                    <td style="width: 250px">
-                                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                            <div class="btn-group me-2" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEdit-id-<?php echo $data->id ?>">
-                                                    <i class="fa-solid fa-pen-to-square"></i> Edit
-                                                </button>
-                                            </div>
-                                            <div class="btn-group me-2" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalHapus-id-<?php echo $data->id ?>">
-                                                    <i class="fa-solid fa-trash-can"></i> Hapus
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                <?php } ?>
-                            </tr>
-                        <?php $i++;
-                        } ?>
-                    </tbody>
-                </table>
+                                    <?php if ($this->session->userdata('is_login') == 1) { ?>
+                                        <th>Action</th>
+                                    <?php } ?>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i = 1;
+                                foreach ($tampilData->result() as $data) { ?>
+                                    <tr>
+                                        <td><?php echo $i; ?></td>
+                                        <td><?php echo $data->nama ?></td>
+                                        <td><?php echo $data->no_hp ?></td>
+                                        <td>
+                                            <?php if ($data->jenis_kelamin == 1) {
+                                                echo "Pria";
+                                            } else {
+                                                echo "Wanita";
+                                            }  ?>
+                                        </td>
+                                        <td><?php echo $data->alamat ?></td>
+                                        <td><?php echo $data->agama ?></td>
+                                        <td><?php echo $data->created_on ?></td>
+
+                                        <?php if ($this->session->userdata('is_login') == 1) { ?>
+                                            <td style="width: 250px">
+                                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                                    <div class="btn-group me-2" role="group" aria-label="First group">
+                                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEdit-id-<?php echo $data->id ?>">
+                                                            <i class="fa-solid fa-pen-to-square"></i> Edit
+                                                        </button>
+                                                    </div>
+                                                    <div class="btn-group me-2" role="group" aria-label="Second group">
+                                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalHapus-id-<?php echo $data->id ?>">
+                                                            <i class="fa-solid fa-trash-can"></i> Hapus
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        <?php } ?>
+                                    </tr>
+                                <?php $i++;
+                                } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
             </div>
         </div>

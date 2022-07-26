@@ -10,6 +10,15 @@ class Data_peserta extends CI_Controller
 		parent::__construct();
 		// model
 		$this->load->model('M_Data_peserta');
+
+		//Cek Apakah Sudah Login?
+		if ($this->session->userdata('is_login') == false) {
+
+			$this->session->set_flashdata('notifikasi', '<div class="alert alert-danger fade show" role="alert">
+				<strong>Akses Di Batasi!</strong> Hanya admin yang dapat membuka fitur ini!.
+			</div>');
+			redirect();
+		}
 	}
 
 	public function index()
