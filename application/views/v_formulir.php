@@ -91,11 +91,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 						<form>
 
-							<div class="form-group row">
-								<label for="label-nama" class="col-sm-2 col-form-label">Nama</label>
-								<div class="col-sm-10">
-									<input type="email" name="nama_lengkap" class="form-control" id="label-nama" placeholder="Masukkan Nama Peserta" required>
-								</div>
+							<div class="form-group">
+								<label for="label-nama" class="col-md-3 col-form-label">Nama</label>
+								<input type="email" name="nama_lengkap" id="label-nama" placeholder="Masukkan Nama Peserta" required style="width: 350px">
 							</div>
 
 							<div class="form-group">
@@ -117,7 +115,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="form-group">
 								<label class="col-md-3 control-label">Agama</label>
 
-								<select name="agama" style="width: 100px; height: 50px" required>
+								<select name="agama" style="width: 350px; height: 50px" required>
 									<option value="islam">ISLAM</option>
 									<option value="kristen">KRISTEN</option>
 									<option value="hindu">HINDU</option>
