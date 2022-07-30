@@ -108,7 +108,7 @@
                             <label class="col-sm-2 col-form-label">Nomor Handphone</label>
                             <div class="col-sm-10">
                                 <input type="number" name="no_hp" value="<?php echo $data->no_hp ?>" class="form-control" placeholder="Masukkan Nomor Handphone" required>
-                                <p style="color: red">Masukkan nomor yang belum/tidak pernah terdaftar!</p>
+                                <!-- <p style="color: red">Masukkan nomor yang belum/tidak pernah terdaftar!</p> -->
                             </div>
                         </div>
 
